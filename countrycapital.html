@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <select id="countries">
+      <option value="select a valid country" selected>Select</option>
+      <option value="Delhi">India</option>
+      <option value="Beijing">China</option>
+      <option value="Washington">USA</option>
+      <option value="London">UK</option>
+      <option value="Tokyo">Japan</option>
+    </select>
+    <p id="ans"></p>
+    <button onclick="capital()">Submit</button>
+    <button onclick="clearForm()">Clear</button>
+  <script>
+    function capital(){
+      var country = document.getElementById("countries").value;
+      document.getElementById("ans").innerText = country;
+    }
+    function clearForm(){
+      window.location.reload();
+    }
+  </script>
+</body>
+</html>

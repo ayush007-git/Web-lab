@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="Results">
+        <tr>
+            <th>Number</th>
+            <th>Square</th>
+            <th>Cube</th>
+        </tr>
+    </table>
+    <script>
+        var tb = document.getElementById("Results");
+        for(var i=1; i<=10; i++){
+            var row = document.createElement("tr");
+            var data1 = document.createElement("td");
+            var data2 = document.createElement("td");
+            var data3 = document.createElement("td");
+
+            data1.appendChild(document.createTextNode(i));
+            data2.appendChild(document.createTextNode(i**2));
+            data3.appendChild(document.createTextNode(i**3));
+
+            row.appendChild(data1);
+            row.appendChild(data2);
+            row.appendChild(data3);
+            tb.appendChild(row);
+        }
+    </script>
+</body>
+</html>

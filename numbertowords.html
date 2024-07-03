@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number to Words Converter</title>
+</head>
+<body>
+    <h1>Number to Words Converter</h1>
+
+    <label for="number">Enter a number (max 3 digits):</label>
+    <input type="number" id="number" max="999">
+    <button onclick="convertToWords()">Convert</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convertToWords() {
+            // Get the input value
+            var number = document.getElementById("number").value;
+
+            // Check if the input is a valid number
+            if (number >= 0 && number <= 999) {
+                // Define arrays for the words
+                var ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+                var tens = ["", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+                var teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+
+                // Convert the number to words
+                var hundredsDigit = Math.floor(number / 100);
+                var tensDigit = Math.floor((number % 100) / 10);
+                var onesDigit = number % 10;
+
+                var words = "";
+
+                if (hundredsDigit > 0) {
+                    words += ones[hundredsDigit] + " hundred ";
+                }
+
+                if (tensDigit > 1) {
+                    words += tens[tensDigit] + " ";
+                    if (onesDigit > 0) {
+                        words += ones[onesDigit];
+                    }
+                } else if (tensDigit === 1) {
+                    words += teens[onesDigit];
+                } else {
+                    words += ones[onesDigit];
+                }
+
+                // Display the result
+                document.getElementById("result").innerText = "In words: " + words;
+            } else {
+                // Display an error message if the input is invalid
+                document.getElementById("result").innerText = "Invalid input. Please enter a number between 0 and 999.";
+            }
+        }
+    </script>
+</body>
+</html>

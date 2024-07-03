@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    td {
+      width: 75px;
+      height: 75px;
+      text-align: center;
+    }
+
+    table {
+      position: relative;
+      box-shadow: 2px 2px 5px gray;
+    }
+
+    th {
+      height: 75px;
+      text-align: right;
+    }
+
+    table,
+    th {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    button {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="4" id="result">0</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td onclick="appendToDisplay('1')"><button>1</button></td>
+        <td onclick="appendToDisplay('2')"><button>2</button></td>
+        <td onclick="appendToDisplay('3')"><button>3</button></td>
+        <td onclick="appendToDisplay('+')"><button>+</button></td>
+      </tr>
+      <tr>
+        <td onclick="appendToDisplay('4')"><button>4</button></td>
+        <td onclick="appendToDisplay('5')"><button>5</button></td>
+        <td onclick="appendToDisplay('6')"><button>6</button></td>
+        <td onclick="appendToDisplay('-')"><button>-</button></td>
+      </tr>
+      <tr>
+        <td onclick="appendToDisplay('7')"><button>7</button></td>
+        <td onclick="appendToDisplay('8')"><button>8</button></td>
+        <td onclick="appendToDisplay('9')"><button>9</button></td>
+        <td onclick="calculate()"><button>=</button></td>
+      </tr>
+      <tr>
+        <td onclick="clearDisplay()"><button>C</button></td>
+        <td onclick="appendToDisplay('0')"><button>0</button></td>
+        <td onclick="appendToDisplay('.')"><button>.</button></td>
+        <td onclick="appendToDisplay('/')"><button>/</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    let expression = '';
+
+    function appendToDisplay(value) {
+      expression += value;
+      document.getElementById('result').innerText = expression;
+    }
+
+    function calculate() {
+      const result = eval(expression);
+      document.getElementById('result').innerText = result;
+      expression = '';
+    }
+
+    function clearDisplay() {
+      expression = '';
+      document.getElementById('result').innerText = '0';
+    }
+  </script>
+</body>
+
+</html>

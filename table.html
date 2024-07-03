@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested Tables</title>
+    <style>
+      .left_table{
+        text-align: center;
+        border-collapse:collapse;
+      }
+      .right_table{
+        text-align: end;
+        margin-top:50px;
+      }
+      .odd{
+        background-color: grey;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div>
+      <table border="2" class="left_table">
+        <tr>
+          <th rowspan="2" colspan="2">CI</th>
+          <th rowspan="2">All Genders</th>
+          <th>By Gender</th>
+        </tr>
+        <tr>
+          <td>
+            <table border="">
+              <tr>
+                <th>Males</th>
+                <th>Females</th>
+              </tr>
+              <tr>
+                <td>9215204</td>
+                <td>4512358</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <th>Rural</th>
+          <td>6521458</td>
+          <td>4515389</td>
+          <td>4152348</td>
+        </tr>
+      </table>
+      <table border="2" class = "right_table">
+        <tr>
+          <th>Data</th>
+          <th>Sales</th>
+          <th>Product</th>
+          <th>Store</th>
+          <th>Value</th>
+        </tr>
+        <tr class="even">
+          <td>10.03.2017</td>
+          <td>Altex</td>
+          <td>Washing Machine</td>
+          <td>Crisu11</td>
+          <td>$180.00</td>
+        </tr>
+        <tr class = "odd">
+          <td>15.05.2017</td>
+          <td>Flanco</td>
+          <td>Telephone</td>
+          <td>Crisu12</td>
+          <td>$450.00</td>
+        </tr>
+        <tr class = "even">
+          <td>3.07.2017</td>
+          <td>Emag</td>
+          <td>Tablet</td>
+          <td>Crisu13</td>
+          <td>$200.00</td>
+        </tr>
+        <tr class = "odd">
+          <td>12.09.2017</td>
+          <td>Domo</td>
+          <td>TV</td>
+          <td>Crisu14</td>
+          <td>$550.00</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
